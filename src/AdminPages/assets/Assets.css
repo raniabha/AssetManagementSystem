@@ -1,0 +1,11 @@
+.container {
+    padding-top: 80px;
+    padding-left: 200px;
+    /* background-color: #f3f3f3; */
+    
+}
+
+.back:hover {
+    color: #c9243f;
+    cursor: pointer
+}
