@@ -26,7 +26,7 @@ export const SidebarData = [
   
   {
     title: 'View Profile',
-    path: '/setting',
+    path: '/managersetting',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   }
