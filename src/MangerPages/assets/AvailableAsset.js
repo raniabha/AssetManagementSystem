@@ -39,7 +39,7 @@ class AvailableAsset extends Component {
     } else {
       return(
         <div>
-          <h2>Available Assets</h2>
+          <h2 style={{textAlign:"center"}}>Available Assets</h2>
           {this.state.response.message && <Alert variant="info">{this.state.response.message}</Alert>}
           <Table striped bordered hover>
             <thead class="thead-dark text-center">

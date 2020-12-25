@@ -40,7 +40,7 @@ class RequestStatus extends Component {
         <ManagerHome/>
         <Container>
         <div>
-          <h2>Request Status </h2>
+          <h2 style={{textAlign:"center"}}>Request Status </h2>
           {this.state.response.message && <Alert variant="info">{this.state.response.message}</Alert>}
           <Table striped bordered hover>
             <thead class="thead-dark text-center">
