@@ -23,6 +23,25 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
+  {
+    title:'Assigned Asset',
+    path: '/userassignedasset',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
+  {
+    title:'Pending Asset',
+    path: '/userpendingasset',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
+  {
+    title:'Reject Asset',
+    path: '/rejectedasset',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
+  
   
   {
     title: 'View Profile',

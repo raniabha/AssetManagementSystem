@@ -15,6 +15,9 @@ import AddAsset from './AdminPages/assets/AddAsset';
 
 import ManagerDashbord from './MangerPages/ManagerDash';
 import RequestStatus from './MangerPages/assets/RequestStatus';
+import UserAssignedAsset from './MangerPages/assets/assignedAsset';
+import UserPendingAsset from './MangerPages/assets/pendingAsset';
+import RejectedAsset from './MangerPages/assets/RejectesAsset';
 import Assets from './MangerPages/assets/Assets';
 
 import AdminRoute from './hoc/AdminRoute';
@@ -41,6 +44,9 @@ function App() {
         <UserRoute path='/userhome'  component={ManagerDashbord} />
         <UserRoute path='/status' component={RequestStatus} />
         <UserRoute path='/assetlist' component={Assets} />
+        <UserRoute path='/userassignedasset' component={UserAssignedAsset} />
+        <UserRoute path='/userpendingasset' component={UserPendingAsset} />
+        <UserRoute path='/rejectedasset' component={RejectedAsset} />
       </Switch>
     </Router>
   );

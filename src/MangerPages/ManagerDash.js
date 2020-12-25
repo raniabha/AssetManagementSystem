@@ -81,7 +81,7 @@ render() {
                     <div class="card-header">Assigned Assets</div>
                     <div class="card-body"><h5 class="card-title">{this.state.assigned}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                       <a href="/asset" class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
+                       <a href="/userassignedasset" class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
                     </div>
                 </div>
                 <div class="card text-white bg-info mb-3" style={{maxWidth: '18rem'}}>
