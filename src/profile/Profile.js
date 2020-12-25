@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Container, Alert } from 'react-bootstrap';
 import ProfileView from './ProfileView';
 import ProfileForm from './ProfileForm';
-import AdminHome from "../AdminPages/adminHome";
+// import AdminHome from "../AdminPages/adminHome";
 
 class Profile extends Component {    
   constructor() {
@@ -71,7 +71,8 @@ class Profile extends Component {
     }
     return (
       <>
-      <AdminHome/>
+      {/* <AdminHome/> */}
+      {this.props.home}
       <div className="App">
         <Container>
           {this.state.response.status === 'success' && this.state.visible && <div><br /><Alert  variant="info" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
