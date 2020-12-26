@@ -63,12 +63,7 @@ export default class Login extends Component {
                 sessionStorage.setItem("email", res.data.payload.email);
                 sessionStorage.setItem("role", res.data.payload.role);
                 sessionStorage.setItem("id", res.data.payload.id);
-                if(res.data.payload.role === "admin")
-                  // <Redirect to='/adminhome'/>
-                  this.props.history.push('/adminhome')
-                else{
-                  this.props.history.push('/userhome')
-                }
+                this.props.history.push('/dashboard')
               }
         })
         .catch(err => {

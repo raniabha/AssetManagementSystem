@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './AdminSidebarData';
-import './adminHome.css';
-import NavHeader from '../components/navheader';
+import { SidebarData } from './SidebarData';
+import './Home.css';
+import NavHeader from './navheader';
 
 
-export default class adminHome extends Component {
+export default class Home extends Component {
   Showsidebar = (item, index) => {
     return (
       <li key={index} className="nav-text">
@@ -27,11 +27,17 @@ export default class adminHome extends Component {
             </li>
             <li className='nav-text'>
               <div>
+              {sessionStorage.getItem("role") === "admin" &&
                 <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img'/>
-                <font className='left_user_info'>
+              }
+              {sessionStorage.getItem("role") === "user" &&
+                <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img1'/>
+              }
+              <font className='left_user_info'>
                   {sessionStorage.getItem("username")}
-                  <br/>
-                  <span>Admin</span>
+                  {sessionStorage.getItem("role") === "admin" && <br/>}
+                  {sessionStorage.getItem("role") === "admin" && <span>Admin</span>}
+                  
                 </font>
               </div>
             </li>

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Container,  Alert } from 'react-bootstrap';
 import AvailableAsset from './AvailableAsset';
 import RequestForm  from './RequestForm';
-import ManagerHome from '../ManagerHome';
+import Home from '../../home/Home';
 
 class Assets extends Component {
   constructor(props) {
@@ -70,7 +70,7 @@ class Assets extends Component {
     }
     return (
     <>
-      <ManagerHome/>
+      <Home/>
       <div className="App">
         <Container>
           {this.state.response.status === 'success' && this.state.visible && <div><br /><Alert variant="info">{this.state.response.message}</Alert></div>}

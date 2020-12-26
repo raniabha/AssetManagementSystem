@@ -5,7 +5,7 @@ import './Assets.css';
 import { Container, Alert } from 'react-bootstrap';
 import AssetList from './AssetList';
 import AssetForm from './AssetForm';
-import AdminHome from '../adminHome';
+import Home from '../../home/Home';
 
 // main asset class component for admin
 class Asset extends Component {
@@ -111,7 +111,7 @@ class Asset extends Component {
     }
     return (
       <>
-      <AdminHome/>
+      <Home/>
       <div className="App">
         <Container>
           {this.state.response.status === 'success' && this.state.visible && <div><br />

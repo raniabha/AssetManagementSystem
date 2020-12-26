@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import {Container, Table, Alert } from 'react-bootstrap';
-import ManagerHome from '../ManagerHome';
+import Home from '../../home/Home';
 import axios from 'axios';
 
 class RequestStatus extends Component {
@@ -43,7 +43,7 @@ class RequestStatus extends Component {
 
 
   render() {
-    const { error, assets} = this.state;
+    const { error, filteredAsset} = this.state;
 
     if(error) {
       return (
@@ -52,7 +52,7 @@ class RequestStatus extends Component {
     } else {
       return(
         <>
-        <ManagerHome/>
+        <Home/>
         <Container>
         <div>
           <h2 style={{display: "inline-block", float: "right"}}>Assets Status </h2>
@@ -73,7 +73,7 @@ class RequestStatus extends Component {
               </tr>
             </thead>
             <tbody class="text-center">
-              {this.state.filteredAsset.map(asset => (
+              {filteredAsset.map(asset => (
                 <tr>
                   <td>{asset.title}</td>
                   <td>{asset.category}</td>

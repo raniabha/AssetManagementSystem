@@ -1,5 +1,5 @@
 import axios from 'axios';
-import ManagerHome from './ManagerHome';
+import Home from '../home/Home';
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 export default class ManagerDashbord extends Component {
@@ -67,7 +67,7 @@ export default class ManagerDashbord extends Component {
 render() {
   return (
   <>    
-     <ManagerHome/>
+     <Home/>
      <div class="container">
             <div class="card-deck text-center " style={{maxWidth: '60rem', marginTop: '50px'}}>
                  

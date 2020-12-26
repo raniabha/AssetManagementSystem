@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from 'react';
 import {Container, Table, Button, Alert } from 'react-bootstrap';
-import AdminHome from '../adminHome';
+import Home from '../../home/Home';
 
 class RequestList extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class RequestList extends Component {
     this.state = {
       error: null,
       assets: [],
+      filteredAsset: [],
       visible : false,
       response: {}
     }
@@ -27,19 +28,23 @@ class RequestList extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = 'http://localhost:3001/assets/getAllRequest';
-    fetch(apiUrl)
-      .then(res => res.json())
-      .then((result) => {
-          this.setState({
-            assets: result.assets
-          });
-         
-        },
-        (error) => {
-          this.setState({ error });
+    axios
+      .get('http://localhost:3001/assets/getAllRequest')
+      .then(result => {
+        let localassset;
+        if(this.props.location.status){
+          localassset = result.data.assets.filter(asset => asset.status === this.props.location.status)
+        }else{
+          localassset = result.data.assets.filter(asset => asset.status === "pending")
         }
-      )
+        this.setState({
+          assets: result.data.assets,
+          filteredAsset: localassset
+              })
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
   }
 
   approveAsset(asset){
@@ -91,8 +96,15 @@ class RequestList extends Component {
     }
   }
 
+  filterStatus = (status) => {
+    // alert("called")
+    this.setState({
+        filteredAsset: this.state.assets.filter(asset => asset.status === status)
+    })
+  }
+
   render() {
-    const { error, assets} = this.state;
+    const { error, filteredAsset} = this.state;
     if(error) {
       return (
         <div>Error: {error.message}</div>
@@ -100,13 +112,18 @@ class RequestList extends Component {
     } else {
       return(
         <>
-        <AdminHome/>
+        <Home/>
         <Container>
         <div>
           {this.state.response.status === 'success' && this.state.visible && <div><br />
-          <Alert  variant="info" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
+          <Alert  variant="ixnfo" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
 
-          <h2 style={{textAlign:"center"}}>Request List</h2>
+          <h2 style={{display: "inline-block", float: "right"}}>Request Status </h2>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-success" onClick={() => this.filterStatus("assigned")}>Assigned</button>
+            <button type="button" class="btn btn-danger" onClick={() => this.filterStatus("rejected")}>Rejected</button>
+            <button type="button" class="btn btn-info" onClick={() => this.filterStatus("pending")}>Pending</button>
+          </div>
           <Table striped bordered hover>
             <thead class="thead-dark text-center">
               <tr>
@@ -119,7 +136,7 @@ class RequestList extends Component {
               </tr>
             </thead>
             <tbody class="text-center">
-              {assets.map(asset => (
+              {filteredAsset.map(asset => (
                 <tr key={asset.req_id}>
                   <td>{asset.title}</td>
                   <td>{asset.category}</td>
@@ -127,8 +144,13 @@ class RequestList extends Component {
                   <td>{asset.req_quantity}</td>
                   <td>{asset.employee}</td>
                   <td>
+                    {asset.status === 'assigned' && <p class="text-success">{asset.status}</p>}
+                    {asset.status === 'rejected' && <p class="text-danger">{asset.status}</p>}
+                    {asset.status === 'pending' && 
                       <Button variant="info" onClick={() => this.approveAsset(asset)}>Approve</Button>
-                      &nbsp;<Button variant="danger" onClick={() => this.rejectAsset(asset)}>Reject</Button>
+                    }&nbsp;{asset.status === 'pending' && 
+                      <Button variant="danger" onClick={() => this.rejectAsset(asset)}>Reject</Button>
+                    }
                   </td>
                 </tr>
               ))}
