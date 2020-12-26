@@ -99,9 +99,12 @@ class AssetList extends Component {
     } else {
       return(
         <>
+          {this.state.response.message && this.state.visible &&
+          <Alert variant="info">{this.state.response.message}</Alert>}
+          
           <h2 style={{display: "inline-block", float: "right"}}>Asset List</h2>
-          <button class="btn btn-dark" style={{float:"left"}} variant="primary" onClick={() => this.props.onAdd()}>Add Asset</button>
-          {this.state.response.message && this.state.visible && <Alert variant="info">{this.state.response.message}</Alert>}
+          <button class="btn btn-primary" style={{float:"left"}} variant="primary" onClick={() => this.props.onAdd()}>Add Asset</button>
+          
           <Table striped bordered hover>
             <thead class="thead-dark text-center">
               <tr>

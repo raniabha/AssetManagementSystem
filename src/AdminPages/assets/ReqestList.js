@@ -9,8 +9,21 @@ class RequestList extends Component {
     this.state = {
       error: null,
       assets: [],
+      visible : false,
       response: {}
     }
+  }
+
+  onShowAlert = () =>{
+    this.setState({
+      visible:true
+      },()=>{
+      setTimeout(()=>{
+        this.setState({
+          visible:false
+        })
+      },1000)
+    });
   }
 
   componentDidMount() {
@@ -21,6 +34,7 @@ class RequestList extends Component {
           this.setState({
             assets: result.assets
           });
+         
         },
         (error) => {
           this.setState({ error });
@@ -44,6 +58,7 @@ class RequestList extends Component {
               response: res.data,
               assets: assets.filter(asst => asst.req_id !== asset.req_id)
             });
+            this.onShowAlert()
           })
           .catch(err => {
               this.setState({ err })
@@ -67,6 +82,7 @@ class RequestList extends Component {
             response: res.data,
             assets: assets.filter(asst => asst.req_id !== asset.req_id)
           });
+          this.onShowAlert()
         })
         .catch(err => {
             this.setState({ err })
@@ -87,8 +103,10 @@ class RequestList extends Component {
         <AdminHome/>
         <Container>
         <div>
+          {this.state.response.status === 'success' && this.state.visible && <div><br />
+          <Alert  variant="info" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
+
           <h2 style={{textAlign:"center"}}>Request List</h2>
-          {this.state.response.message && <Alert variant="info">{this.state.response.message}</Alert>}
           <Table striped bordered hover>
             <thead class="thead-dark text-center">
               <tr>

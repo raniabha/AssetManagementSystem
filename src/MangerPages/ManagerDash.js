@@ -1,6 +1,7 @@
 import axios from 'axios';
 import ManagerHome from './ManagerHome';
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 export default class ManagerDashbord extends Component {
 
   constructor(props) {
@@ -81,14 +82,14 @@ render() {
                     <div class="card-header">Assigned Assets</div>
                     <div class="card-body"><h5 class="card-title">{this.state.assigned}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                       <a href="/userassignedasset" class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
+                       <Link to={{pathname: "/status", status: "assigned"}} class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
                     </div>
                 </div>
                 <div class="card text-white bg-info mb-3" style={{maxWidth: '18rem'}}>
                     <div class="card-header">Rejected Assets</div>
                     <div class="card-body"><h5 class="card-title">{this.state.rejected}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                        <a href="/asset" class="btn text-white btn-info btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
+                        <Link to={{pathname: "/status", status: "rejected"}} class="btn text-white btn-info btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
                     </div>
                 </div>
             </div>
@@ -97,7 +98,7 @@ render() {
                     <div class="card-header">pending Asset </div>
                     <div class="card-body"><h5 class="card-title">{this.state.pending}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                    <a href="/asset" class="btn text-white bg-info btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
+                    <Link to={{pathname: "/status", status: "pending"}} class="btn text-white bg-info btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
                     </div>
                 </div>
                 <div class="card text-white bg-dark mb-3" style={{maxWidth: '18rem'}}>
@@ -110,26 +111,7 @@ render() {
                 
             </div>
         </div>
-        {/* <div class="container">
-          <div class="row">
-          <div class="col-sm-12 col-md-4">
-            <div class="custom-column">
-              <div class="custom-column-header">Assets</div>
-              <div class="custom-column-content">
-                  
-              </div>
-              <div  class="custom-column-footer" ><Button href="/assetlist" class="btn bg-transparent">View All</Button></div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4">
-            <div class="custom-column">        
-              <div class="custom-column-header">Request Status</div>
-              <div class="custom-column-content"></div>
-              <div class="custom-column-footer"><Button  href="/status" class="btn bg-transparent">View All</Button></div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        
       </>
     )
   }

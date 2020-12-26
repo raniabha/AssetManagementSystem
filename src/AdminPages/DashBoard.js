@@ -56,21 +56,15 @@ export default class Dashbord extends Component {
                     </div>
                 </div>
             </div>
-            <div class="card-deck text-center " style={{maxWidth: '60rem', marginTop: '50px'}}>
+            <div class="card-deck text-center " style={{maxWidth: '60rem', marginTop: '50px',paddingLeft: '130px'}}>
                 <div class="card text-white bg-success mb-3" style={{maxWidth: '18rem'}}>
-                    <div class="card-header">Pending Requests</div>
+                    <div class="card-header">Pending Assets Requests</div>
                     <div class="card-body"><h5 class="card-title">{this.state.pending}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
                     <a href="/requestlist" class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
                     </div>
                 </div>
-                <div class="card text-white bg-info mb-3" style={{maxWidth: '18rem'}}>
-                    <div class="card-header">Employees</div>
-                    <div class="card-body"><h5 class="card-title"> </h5></div>
-                    <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                    <a href="/assetlist" class="btn text-white btn-info btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
-                    </div>
-                </div>
+                
                 <div class="card text-white bg-dark mb-3" style={{maxWidth: '18rem'}}>
                     <div class="card-header">Total Asset Cost</div>
                     <div class="card-body"><h5 class="card-title">{this.state.totalPrice}</h5></div>

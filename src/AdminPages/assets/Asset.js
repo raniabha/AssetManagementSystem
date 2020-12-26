@@ -114,7 +114,8 @@ class Asset extends Component {
       <AdminHome/>
       <div className="App">
         <Container>
-          {this.state.response.status === 'success' && this.state.visible && <div><br /><Alert  variant="info" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
+          {this.state.response.status === 'success' && this.state.visible && <div><br />
+          <Alert  variant="info" isOpen={this.state.visible}>{this.state.response.message}</Alert></div>}
           {assetForm_OR_list}
           {/* {this.state.error && <div>Error: {this.state.error.message}</div>} */}
         </Container>

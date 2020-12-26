@@ -12,32 +12,25 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Asset List',
+    title: 'Assets',
     path: '/asset',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },
   {
-    title:'Request List',
+    title:'Requests',
     path: '/requestlist',
     icon: <GoIcons.GoRequestChanges />,
     cName: 'nav-text'
   },
   {
-    title: 'Assigned Asset',
+    title: 'Assigned',
     path: '/assignedasset',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
-    title:'Add Asset',
-    path: '/addasset',
-    // path: {pathname: "/asset", isadd: true},
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'View Profile',
+    title: 'Profile',
     path: '/setting',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'

@@ -12,39 +12,19 @@ export const SidebarData = [
   },
   
   {
-    title: 'Available Assets',
+    title: 'Assets',
     path: '/assetlist',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },
   {
-    title:'Request Status',
+    title:'Status',
     path: '/status',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
-    title:'Assigned Asset',
-    path: '/userassignedasset',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  {
-    title:'Pending Asset',
-    path: '/userpendingasset',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  {
-    title:'Reject Asset',
-    path: '/rejectedasset',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  
-  
-  {
-    title: 'View Profile',
+    title: 'Profile',
     path: '/managersetting',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
