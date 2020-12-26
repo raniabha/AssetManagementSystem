@@ -75,7 +75,7 @@ render() {
                     <div class="card-header">Available Asset </div>
                     <div class="card-body"><h5 class="card-title">{this.state.Quantity-this.state.asset_assigned-this.state.asset_pending}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                    <a href="/assetlist" class="btn text-white bg-dark btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
+                    <a href="/asset" class="btn text-white bg-dark btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</a>
                     </div>
                 </div>
                 <div class="card text-white bg-success mb-3" style={{maxWidth: '18rem'}}>

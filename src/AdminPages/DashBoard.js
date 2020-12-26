@@ -46,7 +46,7 @@ export default class Dashbord extends Component {
                     <div class="card-header">Assigned Assets</div>
                     <div class="card-body"><h5 class="card-title">{this.state.assigned}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                       <Link to={{pathname: "/requestlist", status: "assigned"}} class="btn text-white bg-secondary btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
+                       <Link to={{pathname: "/status", status: "assigned"}} class="btn text-white bg-secondary btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
                     </div>
                 </div>
                 <div class="card text-white bg-success mb-3" style={{maxWidth: '18rem'}}>
@@ -62,7 +62,7 @@ export default class Dashbord extends Component {
                     <div class="card-header">Pending Assets Requests</div>
                     <div class="card-body"><h5 class="card-title">{this.state.pending}</h5></div>
                     <div class="card-footer" style={{padding: '0rem 0rem'}}>
-                    <Link to={{pathname: "/requestlist", status: "pending"}} class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
+                    <Link to={{pathname: "/status", status: "pending"}} class="btn text-white bg-success btn-block" style={{backgroundColor: 'rgba(0,0,0,.1)'}}>View All</Link>
                     </div>
                 </div>
                 
