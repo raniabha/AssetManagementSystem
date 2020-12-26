@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from 'react';
-import {Container, Table, Button, Alert } from 'react-bootstrap';
+import {Container, Table, Alert } from 'react-bootstrap';
 import Home from '../../home/Home';
 
 class RequestList extends Component {
@@ -143,13 +143,13 @@ class RequestList extends Component {
                   <td>{asset.manager}</td>
                   <td>{asset.req_quantity}</td>
                   <td>{asset.employee}</td>
-                  <td>
-                    {asset.status === 'assigned' && <p class="text-success">{asset.status}</p>}
-                    {asset.status === 'rejected' && <p class="text-danger">{asset.status}</p>}
+                  <td style={{padding: "0.35em"}}>
+                    {asset.status === 'assigned' && <span class="text-success mt-1">{asset.status}</span>}
+                    {asset.status === 'rejected' && <span class="text-danger">{asset.status}</span>}
                     {asset.status === 'pending' && 
-                      <Button variant="info" onClick={() => this.approveAsset(asset)}>Approve</Button>
-                    }&nbsp;{asset.status === 'pending' && 
-                      <Button variant="danger" onClick={() => this.rejectAsset(asset)}>Reject</Button>
+                      <button class="btn btn-info mr-3" onClick={() => this.approveAsset(asset)}>Approve</button>
+                    }{asset.status === 'pending' && 
+                      <button class="btn btn-danger" onClick={() => this.rejectAsset(asset)}>Reject</button>
                     }
                   </td>
                 </tr>

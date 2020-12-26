@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Button, Alert } from 'react-bootstrap';
+import { Table, Alert } from 'react-bootstrap';
 
 class AvailableAsset extends Component {
   constructor(props) {
@@ -58,8 +58,8 @@ class AvailableAsset extends Component {
                   <td>{asset.category}</td>
                   <td>{asset.quantity - asset.assigned - asset.pending}</td>
                   <td>{asset.details}</td>
-                  <td>
-                      <Button variant="info" onClick={() => this.props.requestAsset(asset)}>Request</Button>
+                  <td style={{padding: "0.25em"}}>
+                      <button class="btn btn-info" onClick={() => this.props.requestAsset(asset)}>Request</button>
                   </td>
                 </tr>
               ))}

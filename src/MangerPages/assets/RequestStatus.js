@@ -82,9 +82,9 @@ class RequestStatus extends Component {
                   {/* <td>{asset.total_price}</td>
                   <td>{asset.details}</td> */}
                   <td>
-                    {asset.status === 'pending' && <p class="text-info">{asset.status}</p>}
-                    {asset.status === 'assigned' && <p class="text-success">{asset.status}</p>}
-                    {asset.status === 'rejected' && <p class="text-danger">{asset.status}</p>}
+                    {asset.status === 'pending' && <span class="text-info">{asset.status}</span>}
+                    {asset.status === 'assigned' && <span class="text-success">{asset.status}</span>}
+                    {asset.status === 'rejected' && <span class="text-danger">{asset.status}</span>}
                   </td>
                 </tr>
               ))}
