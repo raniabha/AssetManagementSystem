@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, Button} from 'react-bootstrap'
 
 function LoginHeader() {

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import './Home.css';
 import NavHeader from './navheader';
 
 

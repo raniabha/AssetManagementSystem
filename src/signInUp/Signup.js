@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import LoginHeader from './loginheader';
 import axios from 'axios';
-import './login.css';
 
 const validEmailRegex = RegExp("^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-z]+$");
 const ValidNameRegex =RegExp( /^[A-Za-z ]+$/);

@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Assets.css';
 import { Container, Alert } from 'react-bootstrap';
 import AssetList from './AssetList';
 import AssetForm from './AssetForm';
