@@ -20,7 +20,7 @@ export default class PrivateRoute extends Component {
 
     render() {
         return (
-            <Route path={this.props.path} render={(props) => this.adminOrUser(props)}/>
+            <Route path={this.props.path} render={this.adminOrUser}/>
         )
     }
 }

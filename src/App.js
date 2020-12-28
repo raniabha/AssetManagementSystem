@@ -9,11 +9,12 @@ import SignUp from "./signInUp/Signup";
 
 import DashBoard from './AdminPages/DashBoard';
 import Asset from './AdminPages/assets/Asset';
-import RequestList from './AdminPages/assets/ReqestList';
+import AdminStatus from './AdminPages/AdminStatus';
 
 import ManagerDashbord from './MangerPages/ManagerDash';
 import Assets from './MangerPages/assets/Assets';
-import RequestStatus from './MangerPages/assets/RequestStatus';
+import ManagerStatus from './MangerPages/ManagerStatus';
+
 import Profile from "./profile/Profile"
 
 import AuthRoute from './hoc/AuthRoute';
@@ -30,7 +31,7 @@ function App() {
         <AuthRoute path="/sign-up" component={SignUp} />
         <PrivateRoute path='/dashboard' admin={DashBoard}  manager={ManagerDashbord} />
         <PrivateRoute path='/asset' admin={Asset} manager={Assets}/>
-        <PrivateRoute path='/status' admin={RequestList} manager={RequestStatus} />
+        <PrivateRoute path='/status' admin={AdminStatus} manager={ManagerStatus} />
         <PrivateRoute path="/setting"  admin={Profile} manager={Profile} />
       </Switch>
     </Router>

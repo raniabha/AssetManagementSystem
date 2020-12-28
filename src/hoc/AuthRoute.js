@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom';
 
 export default class AuthRoute extends Component {
-    checkifAuth =(props) => {
+    checkifAuth = (props) => {
         let returnvar;
         if(sessionStorage.getItem("username")){
             returnvar = <Redirect to="/dashboard" />
@@ -17,7 +17,7 @@ export default class AuthRoute extends Component {
 
     render() {
         return (
-            <Route path={this.props.path} render={(props) => this.checkifAuth(props)}/>
+            <Route path={this.props.path} render={this.checkifAuth}/>
         )
     }
 }
