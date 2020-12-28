@@ -1,25 +1,31 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap'
-import * as IoIcons from 'react-icons/io';
-
-function KillSession(){
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('role');
-    sessionStorage.clear();
-};
 
 function NavHeader() {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+        <Navbar collapseOnSelect expand="lg" variant="dark" fixed="top" style={{backgroundColor: "#1e1f20"}}>
         <Navbar.Brand><img alt="" src="/assets.svg" width="30" height="30" className="d-inline-block align-top"/>
         {' '}
         Asset Management System
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto"></Nav>
+            <Nav className="mr-auto">
+
+            </Nav>
             <Nav>
-            <Nav.Link  href='/sign-in' onClick={KillSession}><IoIcons.IoMdLogOut />Logout</Nav.Link></Nav>
+                <div>
+                    {sessionStorage.getItem("role") === "admin"?
+                        <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img'/>
+                    :
+                        <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img1'/>
+                    }
+                    <font className='left_user_info'>
+                        {sessionStorage.getItem("username")}
+                        {sessionStorage.getItem("role") === "admin" ? <br/>: null}
+                        {sessionStorage.getItem("role") === "admin" ? <span>Admin</span> : null}
+                    </font>
+                </div>
+            </Nav>
         </Navbar.Collapse>
         </Navbar>
     );

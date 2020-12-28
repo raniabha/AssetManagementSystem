@@ -58,8 +58,8 @@ class Profile extends Component {
       .catch(error => {
         this.setState({ error });
       });
-      // sessionStorage.removeItem("username")
-      // sessionStorage.setItem("username", formdata.name)
+      sessionStorage.removeItem("username")
+      sessionStorage.setItem("username", formdata.name)
   }
 
   render() {
