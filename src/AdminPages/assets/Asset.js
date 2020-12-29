@@ -9,14 +9,7 @@ import Home from '../../home/Home';
 // main asset class component for admin
 class Asset extends Component {
 
-    // this constructor call first when this component loaded. 
-    // the use of state parameter is as follow: 
-    // 1.isAddAsset: when this flag is set then Add form will show up and hide assetList
-    // 2. is EditAsset: when this flag is set then Edit form will show up and hide assetList
-    // 3. error: 
-    // 4.visible: when this flag is set then it show up alert.
-    // 5. response: it set the server response object
-    // 6. asset : this store asset info in edit form(in case of add from this will be empty) 
+    
   constructor(props) {
     super(props);
     this.state = {
@@ -31,10 +24,6 @@ class Asset extends Component {
     }
   }
 
-  // this method is called  when we click on addAsset button which is in assetlist component
-  // it has been pass via props to its assetList child component.
-  // this method set isAddAsset flag to true then it will hide the assetList component
-  // and will show up assetform component. and it will empty asset 
   onAdd = () => {
     this.setState({ 
       isAddAsset: true,
@@ -42,21 +31,12 @@ class Asset extends Component {
     });
   }
 
-  // this method is called  when we click on editAsset button which is in assetlist component
-  // it has been pass via props to its assetList child component.
-  // this method set isEditAsset flag to true then it will hide the assetList component
-  // and will show up assetform component. and it will set asset which come from assetList
   editAsset = assetfromlist => {
     this.setState({ 
       isEditAsset: true,
       asset: assetfromlist
     });
   }
-  
-  // this method is called when we click on cancel button which is in assetForm component 
-  // it has been pass via props to its assetForm child component.
-  // this method set isAddAsset & isEditAsset  flag to false then it will hide the assetForm component
-  // and will show up assetList component and it will empty asset
   onCancel = () => {
     this.setState({
       isAddAsset: false,
@@ -83,7 +63,7 @@ class Asset extends Component {
     if(this.state.isEditAsset){
       apiUrl = 'http://localhost:3001/assets/updateAsset';
     } else {
-      apiUrl = 'http://localhost:3001/assets';
+      apiUrl = 'http://localhost:3001/assets/addAsset';
     }
 
     axios

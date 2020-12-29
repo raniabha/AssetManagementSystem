@@ -39,7 +39,7 @@ class AssetList extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = 'http://localhost:3001/assets';
+    const apiUrl = 'http://localhost:3001/assets/getAllAssets';
 
     fetch(apiUrl)
       .then(res => res.json())
@@ -74,7 +74,7 @@ class AssetList extends Component {
     const { assets } = this.state;
     if (window.confirm('Are you sure to delete this record?')) {
       axios
-        .delete(`http://localhost:3001/assets/${id}`)
+        .delete(`http://localhost:3001/assets/deleteAsset/${id}`)
         .then(res => {
             this.setState({
                 response: res.data,

@@ -12,7 +12,7 @@ class AvailableAsset extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = 'http://localhost:3001/assets';
+    const apiUrl = 'http://localhost:3001/assets/getAllAssets';
 
     fetch(apiUrl)
       .then(res => res.json())
