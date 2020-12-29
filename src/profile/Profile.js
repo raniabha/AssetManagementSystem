@@ -67,7 +67,7 @@ class Profile extends Component {
     if(this.state.isEditProfile) {
       profileForm_OR_profileView = <ProfileForm onFormSubmit={this.onFormSubmit} user_info={this.state.user_info} onCancel={this.onCancel}/>
     }else{
-      profileForm_OR_profileView = <ProfileView editProfile={this.editProfile} />
+      profileForm_OR_profileView = <ProfileView editProfile={(user_info) => this.editProfile(user_info)} />
     }
     return (
       <>

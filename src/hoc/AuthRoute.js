@@ -17,7 +17,8 @@ export default class AuthRoute extends Component {
 
     render() {
         return (
-            <Route path={this.props.path} render={this.checkifAuth}/>
+            <Route path={this.props.path} render={(props) => this.checkifAuth(props)}/>
+            // <Route path="/sign-up" render={<Redirect to="/dashboard" />}/>
         )
     }
 }

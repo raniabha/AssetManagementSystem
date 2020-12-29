@@ -16,10 +16,10 @@ class Assets extends Component {
       visible : false,
       error: null
     }
-    this.onFormSubmit = this.onFormSubmit.bind(this);
+    // this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  requestAsset = asset => {
+  requestAsset = (asset) => {
     this.setState({
       asset: asset,
       isEditAsset: true
@@ -45,7 +45,7 @@ class Assets extends Component {
     });
   }
 
-  onFormSubmit(data) {
+  onFormSubmit =(data) =>{
     axios
       .post('http://localhost:3001/assets/requestAsset', data)
       .then(result => {

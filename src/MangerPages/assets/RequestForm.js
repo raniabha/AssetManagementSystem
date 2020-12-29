@@ -49,7 +49,7 @@ class RequestForm extends React.Component {
           <button data-dismiss="alert"  type="button" class="close text-white " aria-label="Close" onClick={this.props.onCancel} >
             <span aria-hidden="true">&times;</span>
           </button>
-          <h1>Request Form</h1>
+          <h1>Request Assets</h1>
         </div>
         <Form onSubmit={this.handleSubmit} >
           <div class="card-body">
