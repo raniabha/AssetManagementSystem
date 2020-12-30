@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from 'react';
-import Home from '../home/Home';
+import Sidebar from '../NavSidebar/Sidebar';
 
 class AdminStatus extends Component {
   constructor(props) {
@@ -141,7 +141,7 @@ class AdminStatus extends Component {
       }
       return(
         <>
-        <Home/>
+        <Sidebar/>
         <div class="container">
           {alertuser}
           <h2 style={{display: "inline-block", float: "right"}}>Request Status </h2>

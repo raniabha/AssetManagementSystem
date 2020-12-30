@@ -7,13 +7,14 @@ import './App.css'
 import Login from "./signInUp/Login";
 import SignUp from "./signInUp/Signup";
 
-import DashBoard from './AdminPages/DashBoard';
-import Asset from './AdminPages/assets/Asset';
-import AdminStatus from './AdminPages/AdminStatus';
+import DashBoard from './dashbord/AdminDash';
+import ManagerDashbord from './dashbord/ManagerDash';
 
-import ManagerDashbord from './MangerPages/ManagerDash';
-import Assets from './MangerPages/assets/Assets';
-import ManagerStatus from './MangerPages/ManagerStatus';
+import Asset from './assets/AdminAssets/Asset';
+import Assets from './assets/ManagerAssets/Assets';
+
+import AdminStatus from './status/AdminStatus';
+import ManagerStatus from './status/ManagerStatus';
 
 import Profile from "./profile/Profile"
 

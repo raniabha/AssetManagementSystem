@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import NavHeader from './navheader';
-export default class Home extends Component {
+
+export default class Sidebar extends Component {
     KillSession = () => {
         sessionStorage.removeItem('username');
         sessionStorage.removeItem('role');

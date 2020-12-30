@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Container, Alert } from 'react-bootstrap';
 import AssetList from './AssetList';
 import AssetForm from './AssetForm';
-import Home from '../../home/Home';
+import Sidebar from '../../NavSidebar/Sidebar';
 
 // main asset class component for admin
 class Asset extends Component {
@@ -90,7 +90,7 @@ class Asset extends Component {
     }
     return (
       <>
-      <Home/>
+      <Sidebar/>
       <div className="App">
         <Container>
           {this.state.response.status === 'success' && this.state.visible && <div><br />

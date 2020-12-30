@@ -1,4 +1,4 @@
-import Home from '../home/Home';
+import Sidebar from '../NavSidebar/Sidebar';
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -36,7 +36,7 @@ export default class Dashbord extends Component {
     render() {
         return (
         <>    
-        <Home/>
+        <Sidebar/>
         <div class="container">
             <div class="card-deck text-center " style={{maxWidth: '60rem', marginTop: '50px'}}>
                 <div class="card text-white bg-info mb-3" style={{maxWidth: '18rem'}}>

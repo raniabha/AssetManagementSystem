@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Home from '../home/Home';
+import Sidebar from '../NavSidebar/Sidebar';
 
 class ManagerStatus extends Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class ManagerStatus extends Component {
     } else {
       return(
         <>
-        <Home/>
+        <Sidebar/>
         <div class="container">
           <h2 style={{display: "inline-block", float: "right"}}>Assets Status </h2>
           <div class="btn-group" role="group" aria-label="Basic example">
