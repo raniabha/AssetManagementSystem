@@ -3,21 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'
 import { BrowserRouter as Router, Switch} from "react-router-dom";
 import './App.css'
-
 import Login from "./signInUp/Login";
 import SignUp from "./signInUp/Signup";
-
 import DashBoard from './dashbord/AdminDash';
 import ManagerDashbord from './dashbord/ManagerDash';
-
 import Asset from './assets/AdminAssets/Asset';
 import Assets from './assets/ManagerAssets/Assets';
-
 import AdminStatus from './status/AdminStatus';
 import ManagerStatus from './status/ManagerStatus';
-
 import Profile from "./profile/Profile"
-
 import AuthRoute from './hoc/AuthRoute';
 import PrivateRoute from './hoc/PrivateRoute'
 

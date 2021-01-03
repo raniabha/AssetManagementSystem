@@ -104,7 +104,7 @@ export default class SignUp extends Component {
                 <span className='error'>{errors.password}</span>}
               </div>
               <button type="submit" className="btn btn-primary btn-block" >Sign Up</button>
-              <p className="forgot-password text-right">
+              <p className="new-user text-right">
                 Already registered <a href="./">sign in</a>
               </p>
             </form>

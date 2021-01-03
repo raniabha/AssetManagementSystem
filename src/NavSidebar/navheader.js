@@ -15,9 +15,9 @@ function NavHeader() {
             <Nav>
                 <div>
                     {sessionStorage.getItem("role") === "admin"?
-                        <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img'/>
+                        <img alt='Profile Pic' src='./anonymous.png' className='left_user_img'/>
                     :
-                        <img alt='Profile Pic' src='https://am.techjockey.com/assets/img/demo/profile-pics/anonymous.png' className='left_user_img1'/>
+                        <img alt='Profile Pic' src='./anonymous.png' className='left_user_img1'/>
                     }
                     <font className='left_user_info'>
                         {sessionStorage.getItem("username")}

@@ -7,16 +7,15 @@ class ManagerStatus extends Component {
     super(props);
     this.state = {
       assets: [],
-      filteredAsset: [],
+      filteredAsset: [], //subset of asset
       error: null,
       response: {}
     }
   }
   
   filterButtonStatus = (status) => {
-    // alert("called")
     this.setState({
-        filteredAsset: this.state.assets.filter(asset => asset.status === status)
+        filteredAsset: this.state.assets.filter((asset) => asset.status === status)
     })
   }
 
@@ -37,7 +36,7 @@ class ManagerStatus extends Component {
         this.setState({
           assets: result.data.assets,
           filteredAsset: result.data.assets.filter(this.filterAccToDasboard),
-              })
+        })
       })
       .catch(error => {
         this.setState({ error });
@@ -59,7 +58,7 @@ class ManagerStatus extends Component {
         </td>
       </tr>
     )
-    }
+  }
 
 
   render() {
@@ -91,7 +90,7 @@ class ManagerStatus extends Component {
               </tr>
             </thead>
             <tbody class="text-center">
-              {filteredAsset.map(this.showTable)}
+              {filteredAsset.map((asset)=>this.showTable(asset))}
             </tbody>
           </table>
         </div>

@@ -17,8 +17,8 @@ class AdminStatus extends Component {
   onShowAlert = () =>{
     this.setState({
       visible:true
-      },()=>{
-      setTimeout(()=>{
+      },
+      ()=>{setTimeout( ()=>{
         this.setState({
           visible:false
         })
@@ -93,7 +93,7 @@ class AdminStatus extends Component {
         .post('http://localhost:3001/assets/rejectRequest', data)
         .then(res => {
           this.setState({
-            response: res.data,
+            response: res.data
           });
           this.onShowAlert()
           this.componentDidMount()
